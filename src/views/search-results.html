@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+
+{% set pageId = "page-search-results" %}
+
+
+{# bloco de titulo #}
+{% block title %}
+	<title>Resultado da pesquisa</title>
+{% endblock title %}
+
+
+{# Bloco de Styles #}
+{% block styles %}
+	<link rel="stylesheet" href="/styles/search-results.css">
+	<link rel="stylesheet" href="/styles/header.css">
+{% endblock styles %}
+
+
+{# Bloco de conteudo #}
+{% block content %}
+
+	{# Header #}
+	{% include "partials/page-header.html" %}
+
+	<main>
+
+		{% if total > 0 %}
+
+			<h3>Encontre um ponto de coleta</h3>
+			<h4>
+				<strong>{{total}} pontos</strong> existentes
+			</h4>
+
+			<div class="cards">
+
+				<!-- estrutura de repetição no nunjucks  -->
+				<!-- {# {% for variable in iterator %}{% endfor %} #} -->
+
+				{% for place in places %}
+						<div class="card">
+
+							<img src="{{place.image}}" alt="{{place.name}}">
+							<h1>{{place.name}}</h1>
+							<h3>{{place.items}}</h3>
+							<div class="overlay">
+								<p>
+									<b>Razão Social 📃</b>
+									<br/>
+									{{place.name}}
+									<br/>
+									<b>CNPJ 👔</b>
+									<br/>
+									{{place.cnpj}}
+									<br/>
+									<b>Items coletáveis ♻</b>
+									<br/>
+									{{place.items}}
+									<br/>
+									<b>WhatsApp 📲</b>
+									<br/>
+									{{place.whatsapp}}
+									<br/>
+									<b>Endereço 🗺</b>
+									<br/>
+									{{place.address}}, {{place.district}}
+									<br/>
+									<b>Complemento 🔰</b>
+									<br/>
+									{{place.address2}}
+								</p>
+							</div>
+							<h6>Passe o mouse para mais informações</h6>
+						</div>
+				{% endfor %}
+
+			</div>
+
+
+		{% else %}
+			<h4><strong>Nenhum</strong> local encontrados</h4>
+
+		{% endif %}
+
+
+	</main>
+
+{% endblock content %}

@@ -1,0 +1,213 @@
+{% extends "layout.html" %}
+
+
+{% set pageId = "page-create-point" %}
+
+
+{# Bloco de titulo #}
+{% block title %}
+	<title>Criar um ponto de coleta</title>
+{% endblock title %}
+	
+
+{# Bloco de Styles #}
+{% block styles %}
+	<link rel="stylesheet" href="/styles/create-point.css">
+	<link rel="stylesheet" href="/styles/header.css">
+	<link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
+
+
+{# Bloco de conteudo #}
+{% block content %}
+	{# Header  #}
+	{% include "partials/page-header.html" %}
+
+	{# Formulário #}
+
+		<form id="my-form" action="/savepoint" method="POST">
+
+			<h1>Informe os seus dados</h1>
+
+			{# coleção de campos #}
+			<fieldset>
+
+				<legend id="title-form">
+					<h2></h2>
+				</legend>
+
+				<div class="field-group">
+					<div class="field">
+						<label for="name">Nome</label>
+						<!-- 📌 required => Quando presente, especifica que um campo de entrada deve ser 
+								preenchido antes de enviar o formulário. -->
+						<input 
+							type="text" 
+							name="name" 
+							placeholder="Razão social / eco ponto"
+							required="required">
+					</div>
+
+					<div class="field">
+						<label for="cnpj">CNPJ</label>
+						<input 
+							type="text"
+							name="cnpj" 
+							placeholder="Numero do cnpj"
+							required="required">
+					</div>
+				</div>
+
+				<div class="field-group" title="Informe a url da imagem">
+					<div class="field">
+						<label for="image">Imagem</label>
+						<!-- 📌 required => Quando presente, especifica que um campo de entrada deve ser 
+								preenchido antes de enviar o formulário. -->
+						<input 
+							type="url" 
+							name="image" 
+							placeholder="http://" 
+							required="required">
+					</div>
+				</div>
+
+
+				<div class="field-group" title="Informe um numero referente ao whatsapp">
+					<div class="field">
+						<label for="whatsapp">WhatsApp</label>
+						<input 
+							type="text" 
+							name="whatsapp" 
+							placeholder="Numero whatsapp" 
+							required="required">
+					</div>
+				</div>
+
+				<div class="field-group">
+					<div class="field">
+						<label for="address">Endereço</label>
+						<input 
+							type="text" 
+							name="address" 
+							placeholder="Digite o seu endereço"
+							required="required">
+					</div>
+
+					<div class="field">
+						<label for="district">Bairro</label>
+						<input 
+							type="text" 
+							name="district"
+							placeholder="Nome do bairro" 
+							required="required">
+					</div>
+				</div>
+
+				<div class="field-group">
+
+					<div class="field">
+						<label for="address2">Complemento</label>
+						<input 
+							type="text" 
+							name="address2"
+							placeholder="Ponto de referência, número ..." 
+							required="required">
+					</div>
+
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>
+					<h2>Itens coletáveis</h2>
+					<span>Selecione um ou mais</span>
+				</legend>
+
+				<div class="items-grid">
+
+					<li title="Clique para selecionar" data-id=" Batérias e Pilhas">
+						<img src="/assets/eco-batery.svg" alt="Batérias e Pilhas">
+						<span>Batérias / Pilhas</span>
+					</li>
+					
+					<li title="Clique para selecionar" data-id=" Eletrônicos">
+						<img src="/assets/eco-laptop.svg" alt="Eletrônicos">
+						<span>Eletrônicos</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Garrafas Pet">
+						<img src="/assets/eco-bottle.svg" alt="Garrafas Pet">
+						<span>Garrafas Pet</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Lâmpadas">
+						<img src="/assets/eco-lamp.svg" alt="Lâmpadas">
+						<span>Lâmpadas</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Sofá ou Moveis">
+						<img src="/assets/eco-couch.svg" alt="Sofá / Moveis">
+						<span>Sofá ou Moveis</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Papelão">
+						<img src="/assets/eco-box.svg" alt="Papelão">
+						<span>Papelão</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Livros">
+						<img src="/assets/eco-books.svg" alt="Livros">
+						<span>Livros</span>
+					</li>
+
+					<li title="Clique para selecionar" data-id=" Óleo de cozinha">
+						<img src="/assets/eco-oil.svg" alt="Óleo de cozinha">
+						<span>Óleo de cozinha</span>
+					</li>
+
+				</div>
+
+				<input type="hidden" name="items">
+
+			</fieldset>
+
+		</form>
+
+		<footer>
+
+			<div class="alert">
+				<span id="icon"></span>
+				<strong>Preencha todos os campos</strong>
+			</div>
+
+			<button form="my-form" type="submit">Finalizar</button>
+
+		</footer>
+		
+{% endblock content %}
+
+
+
+<!--  Bloco de modal  -->
+{% block modal %}
+	<!-- Passando variável saved de 'server.js'
+	 		se 'saved' for 'true' então:  -->
+	{% if saved %}
+		<!-- Direcionando para a home -->
+		{%include "partials/point-created.html" %}
+	{% endif %}
+
+	<!-- Se 'saved' for 'false' então: -->
+	{% if saved == false %}
+		{%include "partials/point-no-created.html" %}
+	{% endif %}
+
+{% endblock modal %}
+
+
+
+<!-- Bloco de scripts -->
+{% block scripts %}
+	<script src="/scripts/create-point.js"></script>
+{% endblock scripts %}

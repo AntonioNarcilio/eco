@@ -1,0 +1,34 @@
+header {
+	margin-top: 48px;
+	margin-left: -9px;
+	/* deixando um item do lado do outro */
+	display: flex;
+	/* centralizando os items */
+	align-items: center;
+	/* colocando um espaço entre eles */
+	justify-content: space-between;
+}
+
+header a {
+	/* "variável" em root ⬆️  'main.css' */
+	color: var(--title-color-white);
+	display: flex;
+	font-weight: 400;
+	align-items: center;
+}
+
+header a span {
+	margin-right: 16px;
+	background: url('../../assets/arrow-left.svg') no-repeat;
+	background-size: 100%;
+	display: flex;
+	width: 24px;
+	height: 28px;
+}
+
+header span {
+	background: url('../../assets/logo.svg') no-repeat;
+	background-size: 100%;
+	width: 80px;
+	height: 25px;
+}

@@ -1,0 +1,39 @@
+/* Criando propriedade para serem utilizadas como variáveis */
+:root {
+	--title-color: #125C34;
+	--title-color-white: #fff;
+	--title-color-grey: #9C98A6;
+	--title-color-grey-2: #a7a7a7;
+	--color-line: #E6E6F0;
+	--primary-color: #2C9B5F;
+	--secondary-color: #fff;
+	--alert: #E00303;
+	--alert-hover:#c50e0e;
+}
+
+/* Todos */
+* {
+	margin: 0;
+	padding: 0;
+	/* padrão da caixa com a borda / borda faz parte da caixa */
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: #2C9B5F;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	/* 📌 tirando linha do texto */
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Poppins', sans-serif;
+	color: var(--title-color);
+}

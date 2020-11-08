@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+{% set pageId = "page-home" %}
+
+<!-- Bloco de Styles -->
+{% block styles %}
+	<link rel="stylesheet" href="/styles/home.css">
+{% endblock styles %}
+
+<!-- Bloco de conteúdo -->
+{% block content %}
+	<div class="content">
+		<header>
+			<img src="/assets/logo.svg" alt="logomarca">
+		</header>
+		<main>
+			{# {{nunjucks}}  #}
+			<h1>{{title}}</h1>
+			<br/>
+			<br/>
+			<a href="/search" alt="Encontrar eco ponto">
+				<!-- Botão de pesquisa -->
+				<span id="search"></span>
+				<!-- Texto informativo -->
+				<strong>Encontrar eco ponto</strong>
+			</a>
+			<!-- <br/> -->
+			<a href="/create-point" alt="Criar eco ponto">
+				<!-- Botão de pesquisa -->
+				<span id="create-point"></span>
+				<!-- Texto informativo -->
+				<strong>Cadastrar eco ponto</strong>
+			</a>
+
+		</main>
+	</div>
+{% endblock content %}
+
+<!-- 
+{% block scripts %}
+	<script src="/scripts/index.js"></script>
+{% endblock scripts %}
+	 -->
