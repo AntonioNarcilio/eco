@@ -56,14 +56,12 @@
 }
 
 #page-home main {
-	max-width: 560px;
-
+	max-width: 559px;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
-
-	/* padding-top: 34%; */
+	justify-content: center;
+	padding-bottom: 5%;
 }
 
 #page-home main h1 {
@@ -80,8 +78,6 @@
 	font-weight: normal;
 	font-size: 37px;
 	line-height: 46px;
-
-	margin-top: 6%;
 }
 
 #page-home main p {
@@ -98,7 +94,7 @@
 	width: 260px;
 	height: 57px;
 	left: 77px;
-	margin-top: 2%;
+	margin-top: 4%;
 }
 
 #page-home main a span {

@@ -6,6 +6,7 @@ const db = require("./database/db")
 
 // Config porta da aplicação
 const PORT = process.env.PORT || 3000
+const HOST = '0.0.0.0' 
 
 // 📌 Configurar pasta publica
 server.use(express.static("public"))
