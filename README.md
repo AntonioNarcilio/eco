@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img alt="Logo" src="./public/assets/logo.png" width="20%"/>
+  <img alt="Logo" src="./.github/logo_eco.png" width="20%"/>
   
 <br/>  
 <br/>
