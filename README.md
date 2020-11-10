@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img alt="Logo" src="../eco/public/assets/logo.png" width="20%"/>
+  <img alt="Logo" src="./public/assets/logo.png" width="20%"/>
   
 <br/>  
 <br/>
@@ -96,11 +96,8 @@ npm start
 
 <br/>
 
----
 
-<br/>
-
-### Rodando o **Eco** com docker 🐳
+### ⬇️ **Rodando o **Eco** com docker** 🐳
 
 > ⚠ **Atenção**: Antes de seguir o passo a passo abaixo lembre-se de instalar o [docker](https://docs.docker.com)
 
@@ -146,8 +143,6 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.c
 
 <br/>
 
-### 🙏 Agradecimento
+---
 
-<a href="https://rocketseat.com.br">
- <img src="https://img.shields.io/static/v1?label=rocketseat&message=ir&color=8257e5&labelColor=282a36&style=flat&logo=Apache%20RocketMQ&logoColor=white" alt="rocketseat"/>
-</a>
+Created by antonionarcilio 🤓
