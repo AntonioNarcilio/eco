@@ -36,8 +36,10 @@
 
 O nome **Eco** ♻ refere-se a uma "abreviação" de ecológico ou ecológica. O Eco é uma *"simples" aplicação web* desenvolvida com o intuito de facilitar a coleta de resíduos/produtos recicláveis na cidade de São Luís ❤, divulgando não só as empresas que trabalham 👔 nesse ramo como também, ajudando a encontrar os eco pontos 🗺 espalhados na cidade.
 
-<img alt="Happy" src="./.github/template.png"/>
-
+<a title="Visualizar projeto" href="https://www.figma.com/file/86Th2vaeifrilntBXJZshi/Eco?node-id=0%3A1">
+	<img alt="Happy" src="./.github/template.png"/>
+</a>
+<h6 align="center">Clique na imagem para visualizar o projeto no figma</h6>
 
 <br/>
 
