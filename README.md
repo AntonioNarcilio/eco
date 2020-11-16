@@ -49,7 +49,7 @@ O nome **Eco** ♻ refere-se a uma "abreviação" de ecológico ou ecológica. O
 
 ✅ Visualizar os dados como: nome, endereço, whatsapp ...
 
-✅ Cadastrar uma eco ponto;
+✅ Cadastrar um eco ponto;
 
 
 
