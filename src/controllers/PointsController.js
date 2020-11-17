@@ -26,7 +26,7 @@ module.exports={
 		console.log(req)
 
 		if (Object.keys(req.body).length != 8) {
-			return res.status(400).json(req.body)
+			return res.status(400).json({message: "Erro ao criar eco ponto!"})
 		}
 
 		// 📌 inserir dados no banco de dados
@@ -54,18 +54,8 @@ module.exports={
 			req.body.items
 		]
 
-		// 👇 por se utilizar o 'this' não se pode utilizar uma arrow function
-		function afterInsertData(err){
-			if(err) {
-				console.log(err)
-				return res.render("create-point.html", {saved: false})
-			}
-
-			return res.render("create-point.html", {saved: true})
-		}
-		// 👇Ao rodar pela primeira vez 'inserir dados', deve-se comentar a linha do código abaixo 👇
-		await db.run(query, values, afterInsertData)	
-		return res.status(201).json(req.body)
+		await db.run(query, values)	
+		return res.status(201).json({message: "Eco ponto criado com sucesso!"})
 	}
 }
 
