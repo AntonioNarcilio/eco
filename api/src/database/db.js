@@ -17,40 +17,40 @@ module.exports = db
 // 	db.run(`
 // 		CREATE TABLE IF NOT EXISTS places (
 // 			id INTEGER PRIMARY KEY AUTOINCREMENT,
-// 			name TEXT,
-// 			cnpj TEXT,
-// 			image TEXT,
-// 			whatsapp TEXT,
-// 			address TEXT,
-// 			address2 TEXT,
-// 			district TEXT,
-// 			items TEXT
+//  	 	name TEXT,
+//  	 	cnpj TEXT,
+//  	 	image TEXT,
+//  	 	whatsapp TEXT,
+//  	 	address TEXT,
+//  	 	address2 TEXT,
+//  	 	district TEXT,
+//  	 	item TEXTs
 // 		);
 // 	`)
 
-
-
 // 	// // 📌 2. Inserir dados na tabela
 // 	// const query =`
-// 	// 	INSERT INTO places (
-// 	// 		image,
-// 	// 		name,
-// 	// 		address,
-// 	// 		address2,
-// 	// 		state,
-// 	// 		city,
-// 	// 		items
-// 	// 	) VALUES (?,?,?,?,?,?,?);
+//  // INSERT INTO places (
+//  // 	name,
+//  // 	cnpj,
+//  // 	image,
+//  // 	whatsapp,
+//  // 	address,
+//  // 	address2,
+//  // 	district,
+//  // 	items
+//  // ) VALUES (?,?,?,?,?,?,?,?);
 // 	// `
 
 // 	// const values = [
+//  // 	"eco",
+//  //  "12345678912"
 // 	// 	"https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-// 	// 	"Colectoria",
-// 	// 	"Guilherme Gemballa, Jardim América",
+// 	// 	"99 999999",
+// 	// 	"Rua Suécia",
 // 	// 	"Número 260",
-// 	// 	"Santa Catarina",
-// 	// 	"Rio do Sul",
-// 	// 	"Papeis e Papelão"
+// 	// 	"Calhau",
+// 	// 	"Eletrônicos"
 // 	// ]
 
 // 	// // 👇 por se utilizar o 'this' não se pode utilizar uma arrow function
