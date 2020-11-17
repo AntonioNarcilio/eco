@@ -4,7 +4,8 @@
   "main": "src/server.js",
   "licenses": "MIT",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "Antonio Narcilio",
@@ -14,5 +15,7 @@
     "nunjucks": "^3.2.1",
     "sqlite3": "^5.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }

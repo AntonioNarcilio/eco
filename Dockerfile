@@ -27,7 +27,7 @@ COPY --chown=node:node . .
 USER node
 
 # Exponha a porta:
-EXPOSE 3000
+EXPOSE 3333
 
 # Rode o projeto
 CMD [ "npm", "start" ]
