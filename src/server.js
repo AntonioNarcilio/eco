@@ -1,4 +1,5 @@
 const express = require("express")
+const bodyParser = require("body-parser")
 const server = express()
 
 
@@ -21,6 +22,8 @@ nunjucks.configure("src/views", {
 	express: server,
 	noCache: true
 })
+
+server.use(bodyParser.json())
 
 server.use(routes)
 
