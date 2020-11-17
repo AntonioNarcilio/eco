@@ -7,6 +7,8 @@ function Routes() {
     return(
         <Router>
             <Route exact path={'/'} component={Landing}/>
+            {/* <Route exact path={'/createPoint'} component={}/>
+            <Route exact path={'/searchPoint'} component={}/> */}
         </Router>
     )
 }
