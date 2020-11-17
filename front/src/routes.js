@@ -1,14 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Landing from './pages/landing/index'
-// import App from './App'
+import Landing from './pages/Landing/index'
+import CreatePoint from './pages/CreatePoint'
+import SearchPoint from './pages/SearchPoint'
 
 function Routes() {
     return(
         <Router>
             <Route exact path={'/'} component={Landing}/>
-            {/* <Route exact path={'/createPoint'} component={}/>
-            <Route exact path={'/searchPoint'} component={}/> */}
+            <Route exact path={'/createPoint'} component={CreatePoint}/>
+            <Route exact path={'/searchPoint'} component={SearchPoint}/>
         </Router>
     )
 }
