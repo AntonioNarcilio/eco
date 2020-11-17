@@ -1,66 +1,67 @@
 import styled from 'styled-components'
-import LandingImage from '../../assets/images/home_background.svg'
 
-export const Container = styled.div`
-    padding: 4rem ;
-    position: relative;
-    width: 40vw;
-    h1{
-        color: #125C34;
-        font-size: 37px;
-        font-weight: 400;
-        font-family: 'Poppins', sans-serif;
-        max-width: 480px;
-        line-height: 46px
-    }
-
-`
-export const BackgroundImage = styled.div`
-    background-image: url(${LandingImage});
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50vw;
-    height: 85vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 5vh;
-`
-export const ActionsContainer = styled.div`
-    margin-top: 3rem;
-`
-export const ButtonContainer = styled.button`
-    margin-top: 1rem;
+export const Header = styled.div`
+    padding: 5vh 8vw 5vh 8vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    /* max-width: 50%; */
-    background-color: transparent;
-    border: 0 transparent;
+    justify-content: space-between;
 
-    &:hover {
-        cursor: pointer;
-        img {
-            background-color: white;
-        }
-    }
     img {
-        width: 40px;
-        height: 48px;
-        padding: 5px 10px;
-        /* background-color: red; */
-        border-radius: 50px;
-        display: flex;
-        justify-self: center;
-        align-self: center;
-        transition: all 0.3s ease-in-out;
+        height: 30px;
     }
-    p {
-        margin-left: 10px;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 400;
+
+    img:first-of-type {
+        cursor: pointer;
+    }
+
+`
+export const Form = styled.div`
+    background-color: #FFFFFF;
+    margin: 0 auto 5vh;
+    max-width: 600px;
+    /* height: 40rem; */
+    border: 1px  #E6E6F0;
+    border-radius: 8px;
+    padding: 20px 40px;
+     
+    h1 {
+        font-weight: 600;
         font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        color: #125C34;
+        line-height: 34px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E6E6F0;
+    }
+
+    div {
+        margin-top: 20px;
     }
     
+    div:first-of-type {
+        margin-top: 0px;
+    }
+`
+
+export const Label = styled.p`
+    color: #9C98A6;
+    /* font-weight: 600; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin: 0 0 7px;
+`
+
+export const Input = styled.input`
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    background-color: #FAFAFC;
+    /* color: #9C98A6; */
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    /* flex: 1; */
+
 `

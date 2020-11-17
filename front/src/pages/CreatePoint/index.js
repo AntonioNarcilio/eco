@@ -1,22 +1,53 @@
 import React from 'react'
-import { ButtonContainer, Container, ActionsContainer, BackgroundImage } from './styles'
+import { useHistory } from 'react-router-dom'
+import { Header, Form, Input, Label } from './styles'
+import BackIcon from '../../assets/images/icons/arrow-left 1.svg'
+import Logo from '../../assets/images/logo_eco.svg' 
 
 function CreatePoint() {
+    let history = useHistory()
+
+    function handleGoToLanding() {
+        history.push('/')
+    }
+
     return(
         <div>
-        <Container>
-            {/* <p>Landing page</p> */}
-            <h1>Para aqueles que se preocupam com o meio ambiente!</h1>
-            <ActionsContainer>
-                <ButtonContainer>
-                    <p>Procurar eco ponto</p>
-                </ButtonContainer>
-                <ButtonContainer>
-                    <p>Cadastrar eco ponto</p>
-                </ButtonContainer>
-            </ActionsContainer>
-        </Container>
-        <BackgroundImage/>
+            <Header>
+                <img src={BackIcon} alt={'voltar'} onClick={handleGoToLanding}/>
+                <img src={Logo} alt={'Logo'} />
+            </Header>
+            <Form>
+                <h1>Informe os seus dados</h1>
+                <div>
+                    <Label>Nome</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>CNPJ</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>Imagem</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>WhatsApp</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>Endereço</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>Bairro</Label>
+                    <Input/>
+                </div>
+                <div>
+                    <Label>Complemento</Label>
+                    <Input/>
+                </div>
+            </Form>
         </div>
     )
 }
