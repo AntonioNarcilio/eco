@@ -29,21 +29,38 @@ export const BackgroundImage = styled.div`
 export const ActionsContainer = styled.div`
     margin-top: 3rem;
 `
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* max-width: 50%; */
+    background-color: transparent;
+    border: 0 transparent;
 
+    &:hover {
+        cursor: pointer;
+        img {
+            background-color: white;
+        }
+    }
     img {
         width: 40px;
-        height: 40px;
-        padding-right: 20px;
+        height: 48px;
+        padding: 5px 10px;
+        /* background-color: red; */
+        border-radius: 50px;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        transition: all 0.3s ease-in-out;
     }
     p {
+        margin-left: 10px;
         color: #fff;
         font-size: 18px;
         font-weight: 400;
         font-family: 'Poppins', sans-serif;
     }
+    
 `
