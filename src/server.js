@@ -7,24 +7,13 @@ const server = express()
 const PORT = process.env.PORT || 3333
 const HOST = '0.0.0.0' 
 
-// 📌 Configurar pasta publica
-server.use(express.static("public"))
-
-// 📌 Habilitar o uso do req.body da nossa aplicação
-server.use(express.urlencoded({extended: true}))
-
+// Importando rotas
 const routes = require("./routes")
 
-// 📌 Utilizando template engine
-const nunjucks = require("nunjucks")
-nunjucks.configure("src/views", {
-	// "ligando" nunjucks ao express
-	express: server,
-	noCache: true
-})
-
+// Habilitando uso de body do tipo JSON
 server.use(bodyParser.json())
 
+// Usando rotas exportadas
 server.use(routes)
 
 // 📌 Ligando o servidor na porta 3333
