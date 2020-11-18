@@ -17,11 +17,12 @@ export const Header = styled.div`
 `
 export const Form = styled.div`
     background-color: #FFFFFF;
-    margin: 0 auto 5vh;
+    margin: 0 auto;
     max-width: 600px;
     /* height: 40rem; */
     border: 1px  #E6E6F0;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     padding: 20px 40px;
      
     h1 {
@@ -126,5 +127,48 @@ export const SelectableContent = styled.div`
         line-height: 24px;
         color: #9C98A6;
         margin: 0 !important;
+    }
+`
+
+export const ActionsContainer = styled.div`
+    border-top: 1px solid #E6E6F0;
+    max-width: 600px;
+    padding: 40px 40px;
+    background-color: #FAFAFC;
+    margin: 0 auto;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+`
+
+export const AlertMsg = styled.div`
+    display: flex;
+    align-items: center;
+    p {
+        margin-left: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 24px;
+        color: #9C98A6;
+    }
+`
+
+export const FinishButton = styled.button`
+    background-color: #E00303;
+    color: #fff;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 26px;
+    border: 0;
+    border-radius: 8px;
+    padding: 15px 2.5rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #FD6161;
     }
 `

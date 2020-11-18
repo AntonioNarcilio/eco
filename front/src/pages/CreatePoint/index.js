@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Header, Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup } from './styles'
+import { Header, Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
 import SelectableItem from './selectableItem'
 
 import BackIcon from '../../assets/images/icons/arrow-left 1.svg'
@@ -13,6 +13,7 @@ import Sofa from '../../assets/images/icons/Sofa.svg'
 import Product from '../../assets/images/icons/Product.svg'
 import Book from '../../assets/images/icons/Book.svg'
 import Oleo from '../../assets/images/icons/oleo.svg'
+import Attention from '../../assets/images/icons/Atenção.svg'
 
 function CreatePoint() {
     let history = useHistory()
@@ -73,15 +74,20 @@ function CreatePoint() {
                         <h2>Itens coletáveis</h2>
                         <p>Selecione um ou mais</p>
                     </SelectableHeader>
-
                     <SelectableGroup>
                         {itens.map((item, index)=>(
                             <SelectableItem image={item.image} title={item.name}/>
                         ))}
                     </SelectableGroup>
-
                 </SelectableContainer>
             </Form>
+            <ActionsContainer>
+                <AlertMsg>
+                    <img src={Attention} alt={'Atenção'} />
+                    <p>Preencha todos os dados</p>
+                </AlertMsg>
+                <FinishButton>Finalizar</FinishButton>
+            </ActionsContainer>
         </div>
     )
 }
