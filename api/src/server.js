@@ -1,7 +1,11 @@
 const express = require("express")
+const cors = require('cors')
 const bodyParser = require("body-parser")
 const server = express()
 
+
+// Habilitando acesso á API de aplicações externas
+server.use(cors())
 
 // Config porta da aplicação
 const PORT = process.env.PORT || 3333
