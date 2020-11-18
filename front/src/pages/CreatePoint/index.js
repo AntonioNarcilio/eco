@@ -11,7 +11,7 @@ import Product from '../../assets/images/icons/Product.svg'
 import Book from '../../assets/images/icons/Book.svg'
 import Oleo from '../../assets/images/icons/oleo.svg'
 import Attention from '../../assets/images/icons/Atenção.svg'
-import Header from '../../components/header/header.js'
+import Header from '../../components/header'
 
 function CreatePoint() {
 
