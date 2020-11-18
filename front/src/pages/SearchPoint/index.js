@@ -1,7 +1,8 @@
 import React from 'react'
 
 import Header from '../../components/header'
-import { Container, MainContainer, EcoPoint } from './styles'
+import EcoPoint from './ecoPoint'
+import { Container, MainContainer } from './styles'
 
 function SearchPoint() {
     return(

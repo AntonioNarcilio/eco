@@ -28,10 +28,77 @@ export const MainContainer = styled.div`
     /* background-color: yellow; */
 `
 
-export const EcoPoint = styled.div`
-    margin: 1rem 1rem 2rem;
-    width: 18rem;
-    height: 20rem;
-    background-color: #FAFAFC;
+export const EcoPointContainer = styled.div`
+    margin: 0.5rem 0.5rem;
+   
+    position: relative;
+	width: 19rem;
+	height: 22rem;
+	min-height: 320px;
 
+	background-color: #fff;
+	border-radius: 8px;
+
+    img {
+        width: 100%;
+        height: 150px;
+
+        object-fit: cover;
+
+        border-radius: 8px 8px 0 0;
+    }
+
+    h1 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 34px;
+        color: #125C34;
+        padding: 0 4%;
+    }
+    h3 {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        color: #9C98A6;
+        padding: 0 4% 0;
+    }
+    h6 {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 34px;
+        color: #C1BCCC;
+        padding: 0 4% 0 4%;
+    }
+    .overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: #fff;
+        overflow: hidden;
+
+        width: 100%;
+        height: 0%;
+
+        border-radius: 8px;
+        /* padding: 5%; */
+
+        transition: .5s ease;
+    }
+    .overlay h1 {
+        padding: 0;
+    }
+    .overlay p {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 5%;
+        color: #9C98A6;
+    }
+    &:hover .overlay {
+       height: 100%;
+    }
 `
