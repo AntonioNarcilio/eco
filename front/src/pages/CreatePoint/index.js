@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useItens } from '../../context/selectedItens'
 import { Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
 import SelectableItem from './selectableItem'
@@ -15,21 +15,43 @@ import Attention from '../../assets/images/icons/Atenção.svg'
 import Header from '../../components/header'
 
 const itensArray = [
-    {name:"Baterias / pilhas", image: Bateries},
-    {name:"Eletrônicos", image: Notebook},
-    {name:"Garrafas pet", image: Bottle},
-    {name:"Lâmpadas", image: Lamp},
-    {name:"Sofá / Móveis", image: Sofa},
-    {name:"Papelão", image: Product},
-    {name:"Livros", image: Book},
-    {name:"Oléo de cozinha", image: Oleo},
+    {name:'Baterias / pilhas', image: Bateries},
+    {name:'Eletrônicos', image: Notebook},
+    {name:'Garrafas pet', image: Bottle},
+    {name:'Lâmpadas', image: Lamp},
+    {name:'Sofá / Móveis', image: Sofa},
+    {name:'Papelão', image: Product},
+    {name:'Livros', image: Book},
+    {name:'Oléo de cozinha', image: Oleo},
 ]
 
 function CreatePoint() {
     const { itens } = useItens()
+
+    const [ nome, setNome ] = useState('')
+    const [ cnpj, setCnpj ] = useState('')
+    const [ imagem, setImagem ] = useState('')
+    const [ wpp, setWpp ] = useState('')
+    const [ endereco, setEndereco ] = useState('')
+    const [ bairro, setBairro ] = useState('')
+    const [ complemento, setComplemento ] = useState('')
+
     
     function createPoint() {
-        console.log(itens);
+        if (nome === '' || cnpj === '' || imagem === '' || wpp === '' || endereco === '' || bairro === '' || complemento === '') {
+            return
+        }
+        let data = {
+            name: nome,
+            cnpj,
+            image: imagem,
+            whatsapp: wpp,
+            address: endereco,
+            address2: complemento,
+            district: bairro,
+            items: itens
+        }
+        console.log(data);
     }
     return(
         <div>
@@ -38,31 +60,31 @@ function CreatePoint() {
                 <h1>Informe os seus dados</h1>
                 <div>
                     <Label>Nome</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setNome(e.target.value)}/>
                 </div>
                 <div>
                     <Label>CNPJ</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setCnpj(e.target.value)}/>
                 </div>
                 <div>
                     <Label>Imagem</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setImagem(e.target.value)}/>
                 </div>
                 <div>
                     <Label>WhatsApp</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setWpp(e.target.value)}/>
                 </div>
                 <div>
                     <Label>Endereço</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setEndereco(e.target.value)}/>
                 </div>
                 <div>
                     <Label>Bairro</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setBairro(e.target.value)}/>
                 </div>
                 <div>
                     <Label>Complemento</Label>
-                    <Input/>
+                    <Input onChange={(e)=> setComplemento(e.target.value)}/>
                 </div>
                 <SelectableContainer>
                     <SelectableHeader>

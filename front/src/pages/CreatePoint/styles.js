@@ -100,6 +100,7 @@ export const SelectableContent = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+    transition: background-color 0.1s ease-in;
     
     &:hover{
         cursor: pointer;
