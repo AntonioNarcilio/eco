@@ -92,7 +92,7 @@ export const SelectableGroup = styled.div`
 export const SelectableContent = styled.div`
     height: 11.5rem;
     width: 11.5rem;
-    background-color: whitesmoke;
+    background-color: ${(props)=> !props.selected? 'whiteSmoke' : '#EBFFF4'};
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useItens } from '../../context/selectedItens'
 import { Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
 import SelectableItem from './selectableItem'
 
@@ -13,19 +14,23 @@ import Oleo from '../../assets/images/icons/oleo.svg'
 import Attention from '../../assets/images/icons/Atenção.svg'
 import Header from '../../components/header'
 
+const itensArray = [
+    {name:"Baterias / pilhas", image: Bateries},
+    {name:"Eletrônicos", image: Notebook},
+    {name:"Garrafas pet", image: Bottle},
+    {name:"Lâmpadas", image: Lamp},
+    {name:"Sofá / Móveis", image: Sofa},
+    {name:"Papelão", image: Product},
+    {name:"Livros", image: Book},
+    {name:"Oléo de cozinha", image: Oleo},
+]
+
 function CreatePoint() {
-
-    const itens = [
-        {name:"Baterias / pilhas", image: Bateries},
-        {name:"Eletrônicos", image: Notebook},
-        {name:"Garrafas pet", image: Bottle},
-        {name:"Lâmpadas", image: Lamp},
-        {name:"Sofá / Móveis", image: Sofa},
-        {name:"Papelão", image: Product},
-        {name:"Livros", image: Book},
-        {name:"Oléo de cozinha", image: Oleo},
-    ]
-
+    const { itens } = useItens()
+    
+    function createPoint() {
+        console.log(itens);
+    }
     return(
         <div>
             <Header/>
@@ -65,7 +70,7 @@ function CreatePoint() {
                         <p>Selecione um ou mais</p>
                     </SelectableHeader>
                     <SelectableGroup>
-                        {itens.map((item, index)=>(
+                        {itensArray.map((item, index)=>(
                             <SelectableItem image={item.image} title={item.name} key={index}/>
                         ))}
                     </SelectableGroup>
@@ -76,7 +81,7 @@ function CreatePoint() {
                     <img src={Attention} alt={'Atenção'} />
                     <p>Preencha todos os dados</p>
                 </AlertMsg>
-                <FinishButton>Finalizar</FinishButton>
+                <FinishButton onClick={createPoint}>Finalizar</FinishButton>
             </ActionsContainer>
         </div>
     )
