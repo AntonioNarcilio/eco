@@ -1,10 +1,7 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { Header, Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
+import { Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
 import SelectableItem from './selectableItem'
 
-import BackIcon from '../../assets/images/icons/arrow-left 1.svg'
-import Logo from '../../assets/images/logo_eco.svg' 
 import Bateries from '../../assets/images/icons/Bateries.svg'
 import Notebook from '../../assets/images/icons/Notebook.svg'
 import Bottle from '../../assets/images/icons/Bottle.svg'
@@ -14,9 +11,9 @@ import Product from '../../assets/images/icons/Product.svg'
 import Book from '../../assets/images/icons/Book.svg'
 import Oleo from '../../assets/images/icons/oleo.svg'
 import Attention from '../../assets/images/icons/Atenção.svg'
+import Header from '../../components/header/header.js'
 
 function CreatePoint() {
-    let history = useHistory()
 
     const itens = [
         {name:"Baterias / pilhas", image: Bateries},
@@ -29,16 +26,9 @@ function CreatePoint() {
         {name:"Oléo de cozinha", image: Oleo},
     ]
 
-    function handleGoToLanding() {
-        history.push('/')
-    }
-
     return(
         <div>
-            <Header>
-                <img src={BackIcon} alt={'voltar'} onClick={handleGoToLanding}/>
-                <img src={Logo} alt={'Logo'} />
-            </Header>
+            <Header/>
             <Form>
                 <h1>Informe os seus dados</h1>
                 <div>
@@ -76,7 +66,7 @@ function CreatePoint() {
                     </SelectableHeader>
                     <SelectableGroup>
                         {itens.map((item, index)=>(
-                            <SelectableItem image={item.image} title={item.name}/>
+                            <SelectableItem image={item.image} title={item.name} key={index}/>
                         ))}
                     </SelectableGroup>
                 </SelectableContainer>
