@@ -1,11 +1,32 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Header, Form, Input, Label } from './styles'
+import { Header, Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup } from './styles'
+import SelectableItem from './selectableItem'
+
 import BackIcon from '../../assets/images/icons/arrow-left 1.svg'
 import Logo from '../../assets/images/logo_eco.svg' 
+import Bateries from '../../assets/images/icons/Bateries.svg'
+import Notebook from '../../assets/images/icons/Notebook.svg'
+import Bottle from '../../assets/images/icons/Bottle.svg'
+import Lamp from '../../assets/images/icons/Lamp.svg'
+import Sofa from '../../assets/images/icons/Sofa.svg'
+import Product from '../../assets/images/icons/Product.svg'
+import Book from '../../assets/images/icons/Book.svg'
+import Oleo from '../../assets/images/icons/oleo.svg'
 
 function CreatePoint() {
     let history = useHistory()
+
+    const itens = [
+        {name:"Baterias / pilhas", image: Bateries},
+        {name:"Eletrônicos", image: Notebook},
+        {name:"Garrafas pet", image: Bottle},
+        {name:"Lâmpadas", image: Lamp},
+        {name:"Sofá / Móveis", image: Sofa},
+        {name:"Papelão", image: Product},
+        {name:"Livros", image: Book},
+        {name:"Oléo de cozinha", image: Oleo},
+    ]
 
     function handleGoToLanding() {
         history.push('/')
@@ -47,6 +68,19 @@ function CreatePoint() {
                     <Label>Complemento</Label>
                     <Input/>
                 </div>
+                <SelectableContainer>
+                    <SelectableHeader>
+                        <h2>Itens coletáveis</h2>
+                        <p>Selecione um ou mais</p>
+                    </SelectableHeader>
+
+                    <SelectableGroup>
+                        {itens.map((item, index)=>(
+                            <SelectableItem image={item.image} title={item.name}/>
+                        ))}
+                    </SelectableGroup>
+
+                </SelectableContainer>
             </Form>
         </div>
     )

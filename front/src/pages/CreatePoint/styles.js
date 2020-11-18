@@ -65,3 +65,66 @@ export const Input = styled.input`
     /* flex: 1; */
 
 `
+
+export const SelectableContainer = styled.div`
+    /* background-color: blue; */
+    width: 100%;
+    /* height: 10rem; */
+
+`
+
+export const SelectableHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        color: #125C34;
+        line-height: 34px;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 24px;
+        color: #9C98A6;
+    }
+`
+
+export const SelectableGroup = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+`
+
+export const SelectableContent = styled.div`
+    height: 11.5rem;
+    width: 11.5rem;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+    
+    &:hover{
+        cursor: pointer;
+    }
+    img {
+        width: 40%;
+    }
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 24px;
+        color: #9C98A6;
+        margin: 0 !important;
+    }
+`
