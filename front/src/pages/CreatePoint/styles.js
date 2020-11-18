@@ -90,9 +90,11 @@ export const SelectableGroup = styled.div`
 `
 
 export const SelectableContent = styled.div`
-    height: 11.5rem;
-    width: 11.5rem;
+    height: ${(props)=> !props.selected? '11.5rem' : '10.7rem'};
+    width: ${(props)=> !props.selected? '11.5rem' : '10.702rem'};
     background-color: ${(props)=> !props.selected? 'whiteSmoke' : '#EBFFF4'};
+    border: ${(props)=> props.selected && '0.4rem solid #2C9B5F'};
+    border-radius: ${(props)=> !props.selected? '4px' : '8px'};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,7 +105,7 @@ export const SelectableContent = styled.div`
         cursor: pointer;
     }
     img {
-        width: 40%;
+        width: 5rem;
     }
     p {
         font-family: 'Poppins', sans-serif;
