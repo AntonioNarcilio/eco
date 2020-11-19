@@ -160,3 +160,31 @@ export const FinishButton = styled.button`
         background-color: #FD6161;
     }
 `
+export const MessageContainer = styled.div`
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 70vw;
+    }
+    h1 {
+        max-width: 70vw;
+    }
+  `

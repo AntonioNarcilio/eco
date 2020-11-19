@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Axios from 'axios'
 import { useItens } from '../../context/selectedItens'
 import { Form, Input, Label, SelectableContainer, SelectableHeader, SelectableGroup, ActionsContainer, AlertMsg, FinishButton } from './styles'
 import SelectableItem from './selectableItem'
@@ -13,6 +14,7 @@ import Book from '../../assets/images/icons/Book.svg'
 import Oleo from '../../assets/images/icons/oleo.svg'
 import Attention from '../../assets/images/icons/Atenção.svg'
 import Header from '../../components/header'
+import Message from './message'
 
 const itensArray = [
     {name:'Baterias / pilhas', image: Bateries},
@@ -28,6 +30,8 @@ const itensArray = [
 function CreatePoint() {
     const { itens } = useItens()
 
+    const [ message, setMessage ]= useState(false)
+    const [ messageType, setMessageType ]= useState('')
     const [ nome, setNome ] = useState('')
     const [ cnpj, setCnpj ] = useState('')
     const [ imagem, setImagem ] = useState('')
@@ -36,6 +40,12 @@ function CreatePoint() {
     const [ bairro, setBairro ] = useState('')
     const [ complemento, setComplemento ] = useState('')
 
+    function createMessage(action, type) {
+        setMessage(action)
+        if(type) {
+            setMessageType(type)
+        }
+    }
     
     function createPoint() {
         if (nome === '' || cnpj === '' || imagem === '' || wpp === '' || endereco === '' || bairro === '' || complemento === '') {
@@ -51,9 +61,19 @@ function CreatePoint() {
             district: bairro,
             items: itens
         }
-        console.log(data);
+
+        Axios.post('http://0.0.0.0:3333/point',data)
+        .then(response=>{
+            createMessage(true, 'Sucesso')
+        }).catch(error=>{
+            console.log(error);
+            createMessage(true, 'Erro')
+        })
+        // console.log(data);
+        setTimeout(()=>createMessage(false), 3000)
     }
     return(
+        <>
         <div>
             <Header/>
             <Form>
@@ -106,6 +126,10 @@ function CreatePoint() {
                 <FinishButton onClick={createPoint}>Finalizar</FinishButton>
             </ActionsContainer>
         </div>
+        { message &&
+            <Message type={messageType}/>
+        }
+        </>
     )
 }
 

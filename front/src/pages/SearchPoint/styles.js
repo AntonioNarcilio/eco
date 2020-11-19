@@ -29,10 +29,10 @@ export const MainContainer = styled.div`
 `
 
 export const EcoPointContainer = styled.div`
-    margin: 0.5rem 0.5rem;
+    margin: 0.5rem 0.9rem;
    
     position: relative;
-	width: 19rem;
+	width: 17rem;
 	height: 22rem;
 	min-height: 320px;
 
@@ -62,6 +62,7 @@ export const EcoPointContainer = styled.div`
         font-size: 14px;
         color: #9C98A6;
         padding: 0 4% 0;
+        line-height: 20px;
     }
     h6 {
         font-family: 'Poppins', sans-serif;
@@ -90,7 +91,7 @@ export const EcoPointContainer = styled.div`
         transition: .5s ease;
     }
     .overlay h1 {
-        padding: 0;
+        left: 5%;
     }
     .overlay p {
         font-size: 14px;
