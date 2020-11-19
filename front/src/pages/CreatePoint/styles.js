@@ -116,6 +116,12 @@ export const SelectableContent = styled.div`
         color: #9C98A6;
         margin: 0 !important;
     }
+
+    @media(max-width: 800px) {
+        height: ${(props)=> !props.selected? '9rem' : '8.2rem'};
+        width: ${(props)=> !props.selected? '9rem' : '8.202rem'};
+        margin: 0.5rem 0.6rem 0.5rem 0.6rem !important;
+    }
 `
 
 export const ActionsContainer = styled.div`
