@@ -14,7 +14,7 @@ WORKDIR /home/react/app
 COPY package*.json ./
 
 # Instale as dependencias do projeto
-RUN npm install
+RUN npm install --silent
 
 # Copie o código da aplicação para o mesmo diretório de trabalho do container:
 COPY . .
