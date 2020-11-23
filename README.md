@@ -60,6 +60,7 @@ O nome **Eco** ♻ refere-se a uma "abreviação" de ecológico ou ecológica. O
 Servidor 🌐 | Porta 🚪
 ---------:|:--------
 web |  3000
+api |  3333
 
 
 <br/>
@@ -79,37 +80,59 @@ git clone https://github.com/AntonioNarcilio/eco.git
 cd eco
 ~~~
 
-> Então basta executar o comando abaixo para instalar as dependências do projeto
+> Primeiro iremos configurar a API, pois nossa aplicação irá se comunicar com ela. Então entre no diretório `api`
+~~~bash
+cd api
+~~~
+
+> Então basta executar o comando abaixo para instalar as dependências do API
 
 ~~~bash
 npm install
 ~~~
 
-> Com isso após ter finalizado a instalação de todas as dependências do projeto basta rodar o comando abaixo 👇 para iniciar a aplicação
+> Com isso após ter finalizado a instalação de todas as dependências da API basta rodar o comando abaixo 👇 para iniciar
 
 ~~~bash
 npm start
 ~~~
 
+
+> Pronto 🎊 a API já esta funcionando, você consegue acessar em
+`localhost:3333` (opcional)
 ---
 
-> Pronto 🎊 a aplicação já esta funcionando, agora basta ir no navegador de sua preferência e digitar na barra de endereço
+> Agora abra um novo terminal e entre no diretorio `eco` para iniciarmos a aplicação Web. E logo em seguida entre no diretório `front`
+~~~bash
+cd front
+~~~
+
+> Iremos executar o comando abaixo para instalar as dependências da aplicação
+~~~bash
+npm install
+~~~
+
+> Logo após ter finalizado a instalação de todas as dependências da aplicação basta rodar o comando abaixo 👇 para iniciar
+~~~bash
+npm start
+~~~
+
+> Pronto 🎊 a aplicação já esta funcionando, e está consumindo a API que configuramos, agora basta ir no navegador de sua preferência e digitar na barra de endereço
 `localhost:3000` e pronto :).
-
 <br/>
-
 
 ### ⬇️ **Rodando o **Eco** com docker** 🐳
 
 > ⚠ **Atenção**: Antes de seguir o passo a passo abaixo lembre-se de instalar o [docker](https://docs.docker.com)
 
-> Para executar o projeto através de um container no docker é bem fácil basta executar o comando
+> Para executar o projeto através de um container no docker é bem fácil basta executar os comandos
 
 ~~~bash
-docker pull antonionarcilio/eco:1.0
+docker pull joaosipauba/eco:1.0
+docker pull joaosipauba/ecoapi:1.0
 ~~~
 
-> Esse comando irá baixar uma image referente ao projeto armazenada em meu repositório. Para visualizar a image basta executar:
+> Esses comandos baixarão as imagens referentes ao projeto armazenada em meu repositório. Para visualizar a image basta executar:
 
 ~~~bash
 docker images
@@ -117,13 +140,17 @@ docker images
 > Que ira aparecer algo como
 ![](./.github/docker-images.png)
 
-> Com isso precisamos criar um container para rodar a aplicação, então execute:
+> Com isso precisamos criar dois containers para rodar a aplicação, primeiro execute:
 
 ~~~bash
-docker run --name eco -p 3000:3000 -d antonionarcilio/eco:1.0 
+docker run --name ecoapi -p 3333:3333 -d joaosipauba/ecoapi:1.0
+~~~
+> Em seguida execute:
+~~~bash
+docker run --name eco -p 3000:3000 -d joaosipauba/eco:1.0
 ~~~
 
-> De forma bem direta esse comando irá criar um container chamado **eco** que rodará na porta 3000. Para vermos se ele realmente esta rodando basta executar o comando abaixo:
+> De forma bem direta esse comando irá criar dois containers, o primeiro chamado **ecoapi**, e o segundo chamdo **eco**. Os containers rodarão nas porta 3333 e 3000 respectivamente. Para vermos se eles realmente estão funcionando, basta executar o comando abaixo:
 
 ~~~bash
 docker ps
@@ -147,4 +174,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.c
 
 ---
 
-Created by antonionarcilio 🤓
+Created by [antonionarcilio](https://github.com/AntonioNarcilio) e [JoaoSipauba](https://github.com/JoaoSipauba) 🤓
